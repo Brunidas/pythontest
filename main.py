@@ -22,7 +22,7 @@ def get_db():
 
 @app.get("/cliente/{dni}", response_model=schemas.Cliente)
 def read_Cliente(dni: int, db: Session = Depends(get_db)):
-    db_Cliente = crud.get_Cliente(db, dni=dni)
+    db_Cliente = crud.get_cliente(db, dni=dni)
     if db_Cliente is None:
         raise HTTPException(status_code=404, detail="Cliente not found")
     return db_Cliente

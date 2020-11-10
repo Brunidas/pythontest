@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 #SQLALCHEMY_DATABASE_URL = "database://user:password@host/databaseName" 
-SQLALCHEMY_DATABASE_URL = "mysql://root:root@localhost/fastapi_db"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:root@localhost/fastapi_db" #instalar pymysql
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
