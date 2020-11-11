@@ -20,7 +20,7 @@ def get_db():
         db.close()
 
 
-@app.get("/cliente/{dni}", response_model=schemas.Cliente)
+@app.get("/{dni}", response_model=schemas.Cliente)
 def read_Cliente(dni: int, db: Session = Depends(get_db)):
     db_Cliente = crud.get_cliente(db, dni=dni)
     if db_Cliente is None:
