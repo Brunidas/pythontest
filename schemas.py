@@ -6,7 +6,7 @@ from pydantic import BaseModel
 class ClienteBase(BaseModel):
 	CodiClie: int
 	NumeCta: int
-	FaxClie: str
+	FaxClie: Optional[str] = None
 
 
 class ClientesCreate(ClienteBase):
@@ -15,7 +15,7 @@ class ClientesCreate(ClienteBase):
 class Cliente(ClienteBase):
 	CodiClie: int
 	NumeCta: int
-	FaxClie: str
+	FaxClie: Optional[str] = None
 	
 	class Config:
 		orm_mode = True
